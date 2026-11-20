@@ -1,0 +1,716 @@
+{
+  "dataset_title": "Synthetic SAP Legacy Table Identification Dataset",
+  "purpose": "Classify anonymized table extracts by business domain using column names and sample records.",
+  "instructions": "The original SAP table names and domain labels have been removed. Each table is identified only by an anonymous ID. Do not assume the tables are in any particular order.",
+  "tables": [
+    {
+      "table_id": "Table_01",
+      "columns": [
+        {
+          "name": "KUNNR",
+          "description": "Customer account number"
+        },
+        {
+          "name": "NAME1",
+          "description": "Customer name"
+        },
+        {
+          "name": "LAND1",
+          "description": "Country"
+        },
+        {
+          "name": "ORT01",
+          "description": "City"
+        },
+        {
+          "name": "PSTLZ",
+          "description": "Postal code"
+        },
+        {
+          "name": "STRAS",
+          "description": "Street"
+        },
+        {
+          "name": "TELF1",
+          "description": "Telephone"
+        }
+      ],
+      "rows": [
+        {
+          "KUNNR": "1000001",
+          "NAME1": "Northstar Retail Pvt Ltd",
+          "LAND1": "IN",
+          "ORT01": "Hyderabad",
+          "PSTLZ": "500081",
+          "STRAS": "Madhapur Road",
+          "TELF1": "+91-40-5550101"
+        },
+        {
+          "KUNNR": "1000002",
+          "NAME1": "Blue Harbor Foods",
+          "LAND1": "US",
+          "ORT01": "Austin",
+          "PSTLZ": "78701",
+          "STRAS": "Congress Avenue",
+          "TELF1": "+1-512-555-0142"
+        },
+        {
+          "KUNNR": "1000003",
+          "NAME1": "Greenfield Medical Supplies",
+          "LAND1": "GB",
+          "ORT01": "Manchester",
+          "PSTLZ": "M1 1AE",
+          "STRAS": "Deansgate",
+          "TELF1": "+44-161-555-0188"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_02",
+      "columns": [
+        {
+          "name": "KUNNR",
+          "description": "Customer account number"
+        },
+        {
+          "name": "VKORG",
+          "description": "Sales organization"
+        },
+        {
+          "name": "VTWEG",
+          "description": "Distribution channel"
+        },
+        {
+          "name": "SPART",
+          "description": "Division"
+        },
+        {
+          "name": "KDGRP",
+          "description": "Customer group"
+        },
+        {
+          "name": "WAERS",
+          "description": "Currency"
+        }
+      ],
+      "rows": [
+        {
+          "KUNNR": "1000001",
+          "VKORG": "IN10",
+          "VTWEG": "10",
+          "SPART": "00",
+          "KDGRP": "01",
+          "WAERS": "INR"
+        },
+        {
+          "KUNNR": "1000002",
+          "VKORG": "US20",
+          "VTWEG": "20",
+          "SPART": "00",
+          "KDGRP": "02",
+          "WAERS": "USD"
+        },
+        {
+          "KUNNR": "1000003",
+          "VKORG": "GB10",
+          "VTWEG": "10",
+          "SPART": "01",
+          "KDGRP": "03",
+          "WAERS": "GBP"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_03",
+      "columns": [
+        {
+          "name": "LIFNR",
+          "description": "Vendor account number"
+        },
+        {
+          "name": "NAME1",
+          "description": "Vendor name"
+        },
+        {
+          "name": "LAND1",
+          "description": "Country"
+        },
+        {
+          "name": "ORT01",
+          "description": "City"
+        },
+        {
+          "name": "STRAS",
+          "description": "Street"
+        },
+        {
+          "name": "KTOKK",
+          "description": "Vendor account group"
+        }
+      ],
+      "rows": [
+        {
+          "LIFNR": "2000001",
+          "NAME1": "Apex Industrial Components",
+          "LAND1": "IN",
+          "ORT01": "Pune",
+          "STRAS": "Chakan Industrial Area",
+          "KTOKK": "国内"
+        },
+        {
+          "LIFNR": "2000002",
+          "NAME1": "Metro Office Systems",
+          "LAND1": "US",
+          "ORT01": "Chicago",
+          "STRAS": "Lake Street",
+          "KTOKK": "0001"
+        },
+        {
+          "LIFNR": "2000003",
+          "NAME1": "Silverline Logistics",
+          "LAND1": "DE",
+          "ORT01": "Hamburg",
+          "STRAS": "Hafenstrasse",
+          "KTOKK": "0002"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_04",
+      "columns": [
+        {
+          "name": "LIFNR",
+          "description": "Vendor account number"
+        },
+        {
+          "name": "BUKRS",
+          "description": "Company code"
+        },
+        {
+          "name": "AKONT",
+          "description": "Reconciliation G/L account"
+        },
+        {
+          "name": "ZTERM",
+          "description": "Payment terms"
+        },
+        {
+          "name": "ZWELS",
+          "description": "Payment methods"
+        }
+      ],
+      "rows": [
+        {
+          "LIFNR": "2000001",
+          "BUKRS": "IN01",
+          "AKONT": "0000211000",
+          "ZTERM": "Z030",
+          "ZWELS": "T"
+        },
+        {
+          "LIFNR": "2000002",
+          "BUKRS": "US01",
+          "AKONT": "0000212000",
+          "ZTERM": "N045",
+          "ZWELS": "C"
+        },
+        {
+          "LIFNR": "2000003",
+          "BUKRS": "DE01",
+          "AKONT": "0000213000",
+          "ZTERM": "Z014",
+          "ZWELS": "T"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_05",
+      "columns": [
+        {
+          "name": "MATNR",
+          "description": "Material number"
+        },
+        {
+          "name": "MTART",
+          "description": "Material type"
+        },
+        {
+          "name": "MATKL",
+          "description": "Material group"
+        },
+        {
+          "name": "MEINS",
+          "description": "Base unit of measure"
+        },
+        {
+          "name": "BRGEW",
+          "description": "Gross weight"
+        },
+        {
+          "name": "NTGEW",
+          "description": "Net weight"
+        }
+      ],
+      "rows": [
+        {
+          "MATNR": "MAT-000101",
+          "MTART": "FERT",
+          "MATKL": "ELEC",
+          "MEINS": "EA",
+          "BRGEW": 2.4,
+          "NTGEW": 2.1
+        },
+        {
+          "MATNR": "MAT-000102",
+          "MTART": "ROH",
+          "MATKL": "PACK",
+          "MEINS": "KG",
+          "BRGEW": 10.0,
+          "NTGEW": 9.75
+        },
+        {
+          "MATNR": "MAT-000103",
+          "MTART": "HALB",
+          "MATKL": "MECH",
+          "MEINS": "EA",
+          "BRGEW": 5.6,
+          "NTGEW": 5.2
+        }
+      ]
+    },
+    {
+      "table_id": "Table_06",
+      "columns": [
+        {
+          "name": "MATNR",
+          "description": "Material number"
+        },
+        {
+          "name": "SPRAS",
+          "description": "Language key"
+        },
+        {
+          "name": "MAKTX",
+          "description": "Material description"
+        }
+      ],
+      "rows": [
+        {
+          "MATNR": "MAT-000101",
+          "SPRAS": "E",
+          "MAKTX": "Wireless barcode scanner"
+        },
+        {
+          "MATNR": "MAT-000101",
+          "SPRAS": "D",
+          "MAKTX": "Drahtloser Barcode-Scanner"
+        },
+        {
+          "MATNR": "MAT-000102",
+          "SPRAS": "E",
+          "MAKTX": "Food-grade packaging resin"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_07",
+      "columns": [
+        {
+          "name": "BUKRS",
+          "description": "Company code"
+        },
+        {
+          "name": "BELNR",
+          "description": "Accounting document number"
+        },
+        {
+          "name": "GJAHR",
+          "description": "Fiscal year"
+        },
+        {
+          "name": "BLART",
+          "description": "Document type"
+        },
+        {
+          "name": "BUDAT",
+          "description": "Posting date"
+        },
+        {
+          "name": "BLDAT",
+          "description": "Document date"
+        },
+        {
+          "name": "WAERS",
+          "description": "Currency"
+        }
+      ],
+      "rows": [
+        {
+          "BUKRS": "IN01",
+          "BELNR": "1900000456",
+          "GJAHR": "2025",
+          "BLART": "KR",
+          "BUDAT": "2025-03-14",
+          "BLDAT": "2025-03-13",
+          "WAERS": "INR"
+        },
+        {
+          "BUKRS": "US01",
+          "BELNR": "1900000781",
+          "GJAHR": "2025",
+          "BLART": "SA",
+          "BUDAT": "2025-04-02",
+          "BLDAT": "2025-04-02",
+          "WAERS": "USD"
+        },
+        {
+          "BUKRS": "DE01",
+          "BELNR": "1900000912",
+          "GJAHR": "2025",
+          "BLART": "RE",
+          "BUDAT": "2025-05-21",
+          "BLDAT": "2025-05-20",
+          "WAERS": "EUR"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_08",
+      "columns": [
+        {
+          "name": "BUKRS",
+          "description": "Company code"
+        },
+        {
+          "name": "BELNR",
+          "description": "Accounting document number"
+        },
+        {
+          "name": "GJAHR",
+          "description": "Fiscal year"
+        },
+        {
+          "name": "BUZEI",
+          "description": "Line item number"
+        },
+        {
+          "name": "KOART",
+          "description": "Account type"
+        },
+        {
+          "name": "HKONT",
+          "description": "G/L account"
+        },
+        {
+          "name": "DMBTR",
+          "description": "Amount in local currency"
+        },
+        {
+          "name": "WRBTR",
+          "description": "Amount in document currency"
+        },
+        {
+          "name": "KUNNR",
+          "description": "Customer account"
+        },
+        {
+          "name": "LIFNR",
+          "description": "Vendor account"
+        }
+      ],
+      "rows": [
+        {
+          "BUKRS": "IN01",
+          "BELNR": "1900000456",
+          "GJAHR": "2025",
+          "BUZEI": "001",
+          "KOART": "K",
+          "HKONT": "0000211000",
+          "DMBTR": 125000.0,
+          "WRBTR": 125000.0,
+          "KUNNR": "",
+          "LIFNR": "2000001"
+        },
+        {
+          "BUKRS": "US01",
+          "BELNR": "1900000781",
+          "GJAHR": "2025",
+          "BUZEI": "001",
+          "KOART": "D",
+          "HKONT": "0000110000",
+          "DMBTR": 8400.0,
+          "WRBTR": 8400.0,
+          "KUNNR": "1000002",
+          "LIFNR": ""
+        },
+        {
+          "BUKRS": "DE01",
+          "BELNR": "1900000912",
+          "GJAHR": "2025",
+          "BUZEI": "002",
+          "KOART": "K",
+          "HKONT": "0000213000",
+          "DMBTR": 2190.5,
+          "WRBTR": 2190.5,
+          "KUNNR": "",
+          "LIFNR": "2000003"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_09",
+      "columns": [
+        {
+          "name": "EBELN",
+          "description": "Purchasing document number"
+        },
+        {
+          "name": "BUKRS",
+          "description": "Company code"
+        },
+        {
+          "name": "BSTYP",
+          "description": "Purchasing document category"
+        },
+        {
+          "name": "BSART",
+          "description": "Purchasing document type"
+        },
+        {
+          "name": "LIFNR",
+          "description": "Vendor account number"
+        },
+        {
+          "name": "BEDAT",
+          "description": "Document date"
+        },
+        {
+          "name": "WAERS",
+          "description": "Currency"
+        }
+      ],
+      "rows": [
+        {
+          "EBELN": "4500001001",
+          "BUKRS": "IN01",
+          "BSTYP": "F",
+          "BSART": "NB",
+          "LIFNR": "2000001",
+          "BEDAT": "2025-06-03",
+          "WAERS": "INR"
+        },
+        {
+          "EBELN": "4500001002",
+          "BUKRS": "US01",
+          "BSTYP": "F",
+          "BSART": "NB",
+          "LIFNR": "2000002",
+          "BEDAT": "2025-06-07",
+          "WAERS": "USD"
+        },
+        {
+          "EBELN": "4500001003",
+          "BUKRS": "DE01",
+          "BSTYP": "F",
+          "BSART": "FO",
+          "LIFNR": "2000003",
+          "BEDAT": "2025-06-12",
+          "WAERS": "EUR"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_10",
+      "columns": [
+        {
+          "name": "EBELN",
+          "description": "Purchasing document number"
+        },
+        {
+          "name": "EBELP",
+          "description": "Item number"
+        },
+        {
+          "name": "MATNR",
+          "description": "Material number"
+        },
+        {
+          "name": "TXZ01",
+          "description": "Short item text"
+        },
+        {
+          "name": "MENGE",
+          "description": "Order quantity"
+        },
+        {
+          "name": "MEINS",
+          "description": "Order unit"
+        },
+        {
+          "name": "NETPR",
+          "description": "Net price"
+        }
+      ],
+      "rows": [
+        {
+          "EBELN": "4500001001",
+          "EBELP": "00010",
+          "MATNR": "MAT-000101",
+          "TXZ01": "Barcode scanners",
+          "MENGE": 25,
+          "MEINS": "EA",
+          "NETPR": 1850.0
+        },
+        {
+          "EBELN": "4500001001",
+          "EBELP": "00020",
+          "MATNR": "MAT-000102",
+          "TXZ01": "Packaging resin",
+          "MENGE": 500,
+          "MEINS": "KG",
+          "NETPR": 72.5
+        },
+        {
+          "EBELN": "4500001002",
+          "EBELP": "00010",
+          "MATNR": "MAT-000103",
+          "TXZ01": "Precision motor assembly",
+          "MENGE": 40,
+          "MEINS": "EA",
+          "NETPR": 4200.0
+        }
+      ]
+    },
+    {
+      "table_id": "Table_11",
+      "columns": [
+        {
+          "name": "VBELN",
+          "description": "Sales document number"
+        },
+        {
+          "name": "AUART",
+          "description": "Sales document type"
+        },
+        {
+          "name": "VKORG",
+          "description": "Sales organization"
+        },
+        {
+          "name": "VTWEG",
+          "description": "Distribution channel"
+        },
+        {
+          "name": "SPART",
+          "description": "Division"
+        },
+        {
+          "name": "KUNNR",
+          "description": "Customer account number"
+        },
+        {
+          "name": "AUDAT",
+          "description": "Document date"
+        },
+        {
+          "name": "WAERK",
+          "description": "Document currency"
+        }
+      ],
+      "rows": [
+        {
+          "VBELN": "0000007001",
+          "AUART": "OR",
+          "VKORG": "IN10",
+          "VTWEG": "10",
+          "SPART": "00",
+          "KUNNR": "1000001",
+          "AUDAT": "2025-07-01",
+          "WAERK": "INR"
+        },
+        {
+          "VBELN": "0000007002",
+          "AUART": "OR",
+          "VKORG": "US20",
+          "VTWEG": "20",
+          "SPART": "00",
+          "KUNNR": "1000002",
+          "AUDAT": "2025-07-04",
+          "WAERK": "USD"
+        },
+        {
+          "VBELN": "0000007003",
+          "AUART": "RE",
+          "VKORG": "GB10",
+          "VTWEG": "10",
+          "SPART": "01",
+          "KUNNR": "1000003",
+          "AUDAT": "2025-07-09",
+          "WAERK": "GBP"
+        }
+      ]
+    },
+    {
+      "table_id": "Table_12",
+      "columns": [
+        {
+          "name": "VBELN",
+          "description": "Sales document number"
+        },
+        {
+          "name": "POSNR",
+          "description": "Item number"
+        },
+        {
+          "name": "MATNR",
+          "description": "Material number"
+        },
+        {
+          "name": "ARKTX",
+          "description": "Short item description"
+        },
+        {
+          "name": "KWMENG",
+          "description": "Order quantity"
+        },
+        {
+          "name": "VRKME",
+          "description": "Sales unit"
+        },
+        {
+          "name": "NETWR",
+          "description": "Net value"
+        }
+      ],
+      "rows": [
+        {
+          "VBELN": "0000007001",
+          "POSNR": "000010",
+          "MATNR": "MAT-000101",
+          "ARKTX": "Wireless barcode scanner",
+          "KWMENG": 10,
+          "VRKME": "EA",
+          "NETWR": 18500.0
+        },
+        {
+          "VBELN": "0000007001",
+          "POSNR": "000020",
+          "MATNR": "MAT-000102",
+          "ARKTX": "Food-grade packaging resin",
+          "KWMENG": 100,
+          "VRKME": "KG",
+          "NETWR": 7250.0
+        },
+        {
+          "VBELN": "0000007002",
+          "POSNR": "000010",
+          "MATNR": "MAT-000103",
+          "ARKTX": "Precision motor assembly",
+          "KWMENG": 5,
+          "VRKME": "EA",
+          "NETWR": 21000.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+{
+  "dataset_name": "Client Legacy ERP Extract - Test 02",
+  "purpose": "A simulated client-provided legacy ERP extract for testing table profiling and SAP table identification.",
+  "context": {
+    "source_system": "Legacy ERP with custom naming conventions",
+    "industry": "Wholesale distribution and manufacturing",
+    "notes": [
+      "Source table and column names do not use standard SAP naming conventions.",
+      "Some field descriptions are missing or vague, as often happens in client extracts.",
+      "Values are anonymized and synthetic.",
+      "Sample rows are illustrative extracts, not complete production data."
+    ]
+  },
+  "instructions": "Analyze each table using its column names, available descriptions, relationships implied by keys, and sample values. Infer the likely business purpose and, where justified, the closest likely SAP table. Do not assume every table has a one-to-one SAP equivalent. If evidence is insufficient, say Unknown and explain why.",
+  "tables": [
+    {
+      "table_id": "SRC_001",
+      "description": "Business partner records used by order entry and billing.",
+      "columns": [
+        {
+          "name": "account_no",
+          "description": "Unique account reference"
+        },
+        {
+          "name": "legal_name",
+          "description": "Registered or trading name"
+        },
+        {
+          "name": "country_code",
+          "description": "Country"
+        },
+        {
+          "name": "city_name",
+          "description": "City or locality"
+        },
+        {
+          "name": "postal",
+          "description": "Postal code"
+        },
+        {
+          "name": "street_line",
+          "description": "Street and building details"
+        },
+        {
+          "name": "phone_main",
+          "description": "Main contact number"
+        },
+        {
+          "name": "acct_class",
+          "description": "Account category"
+        }
+      ],
+      "sample_records": [
+        {
+          "account_no": "C-100284",
+          "legal_name": "Northstar Industrial Supplies Pvt Ltd",
+          "country_code": "IN",
+          "city_name": "Pune",
+          "postal": "411019",
+          "street_line": "Plot 18, Bhosari MIDC",
+          "phone_main": "+91-20-4102-8800",
+          "acct_class": "DOM"
+        },
+        {
+          "account_no": "C-100317",
+          "legal_name": "Blue Ridge Components",
+          "country_code": "IN",
+          "city_name": "Hyderabad",
+          "postal": "500081",
+          "street_line": "Survey 42, Kondapur",
+          "phone_main": "+91-40-6711-2200",
+          "acct_class": "DOM"
+        },
+        {
+          "account_no": "C-200044",
+          "legal_name": "Meridian Tools GmbH",
+          "country_code": "DE",
+          "city_name": "Stuttgart",
+          "postal": "70567",
+          "street_line": "Industriestrasse 7",
+          "phone_main": "+49-711-555-0190",
+          "acct_class": "INT"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_002",
+      "description": "Customer-specific commercial settings by market and channel.",
+      "columns": [
+        {
+          "name": "account_no",
+          "description": "Account reference"
+        },
+        {
+          "name": "market_unit",
+          "description": "Selling organization"
+        },
+        {
+          "name": "route_code",
+          "description": "Distribution route"
+        },
+        {
+          "name": "product_div",
+          "description": "Product division"
+        },
+        {
+          "name": "price_group",
+          "description": "Pricing/customer group"
+        },
+        {
+          "name": "invoice_currency",
+          "description": "Currency used for sales"
+        },
+        {
+          "name": "delivery_priority",
+          "description": "Priority for delivery"
+        }
+      ],
+      "sample_records": [
+        {
+          "account_no": "C-100284",
+          "market_unit": "IN10",
+          "route_code": "01",
+          "product_div": "00",
+          "price_group": "A2",
+          "invoice_currency": "INR",
+          "delivery_priority": "02"
+        },
+        {
+          "account_no": "C-100317",
+          "market_unit": "IN10",
+          "route_code": "02",
+          "product_div": "01",
+          "price_group": "B1",
+          "invoice_currency": "INR",
+          "delivery_priority": "01"
+        },
+        {
+          "account_no": "C-200044",
+          "market_unit": "EU20",
+          "route_code": "01",
+          "product_div": "00",
+          "price_group": "A1",
+          "invoice_currency": "EUR",
+          "delivery_priority": "03"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_003",
+      "description": "Supplier directory and remittance contact information.",
+      "columns": [
+        {
+          "name": "party_ref",
+          "description": "Supplier identifier"
+        },
+        {
+          "name": "supplier_display",
+          "description": "Supplier name"
+        },
+        {
+          "name": "nation",
+          "description": "Country of registration"
+        },
+        {
+          "name": "town",
+          "description": "Registered city"
+        },
+        {
+          "name": "address_text",
+          "description": "Postal address"
+        },
+        {
+          "name": "supplier_group",
+          "description": "Grouping used by procurement"
+        },
+        {
+          "name": "tax_registration",
+          "description": "Tax registration reference"
+        }
+      ],
+      "sample_records": [
+        {
+          "party_ref": "V-00881",
+          "supplier_display": "Apex Fasteners India Ltd",
+          "nation": "IN",
+          "town": "Chennai",
+          "address_text": "No. 9, Ambattur Industrial Estate",
+          "supplier_group": "LOCAL",
+          "tax_registration": "GST-33AABCA1234F1Z2"
+        },
+        {
+          "party_ref": "V-00902",
+          "supplier_display": "Kanto Precision Works",
+          "nation": "JP",
+          "town": "Osaka",
+          "address_text": "2-14 Nanko Kita",
+          "supplier_group": "IMPORT",
+          "tax_registration": "JP-TX-884201"
+        },
+        {
+          "party_ref": "V-00977",
+          "supplier_display": "Delta Packaging Co",
+          "nation": "IN",
+          "town": "Ahmedabad",
+          "address_text": "Unit 6, Vatva GIDC",
+          "supplier_group": "LOCAL",
+          "tax_registration": "GST-24AACCD5678K1Z5"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_004",
+      "description": "Supplier settings maintained separately for each legal entity.",
+      "columns": [
+        {
+          "name": "party_ref",
+          "description": "Supplier identifier"
+        },
+        {
+          "name": "legal_entity",
+          "description": "Company/legal entity code"
+        },
+        {
+          "name": "recon_gl",
+          "description": "Control account in general ledger"
+        },
+        {
+          "name": "pay_rule",
+          "description": "Payment terms code"
+        },
+        {
+          "name": "pay_methods",
+          "description": "Permitted payment methods"
+        },
+        {
+          "name": "withholding_flag",
+          "description": "Subject to withholding tax"
+        }
+      ],
+      "sample_records": [
+        {
+          "party_ref": "V-00881",
+          "legal_entity": "IN01",
+          "recon_gl": "211000",
+          "pay_rule": "N030",
+          "pay_methods": "T"
+        },
+        {
+          "party_ref": "V-00902",
+          "legal_entity": "IN01",
+          "recon_gl": "211100",
+          "pay_rule": "N060",
+          "pay_methods": "T,W",
+          "withholding_flag": "Y"
+        },
+        {
+          "party_ref": "V-00977",
+          "legal_entity": "IN02",
+          "recon_gl": "211000",
+          "pay_rule": "N045",
+          "pay_methods": "T",
+          "withholding_flag": "N"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_005",
+      "description": "Central product catalogue. Used by inventory, purchasing and sales.",
+      "columns": [
+        {
+          "name": "item_ref",
+          "description": "Internal product code"
+        },
+        {
+          "name": "item_category",
+          "description": "Product category"
+        },
+        {
+          "name": "family_code",
+          "description": "Merchandise family"
+        },
+        {
+          "name": "stock_unit",
+          "description": "Base unit"
+        },
+        {
+          "name": "gross_mass",
+          "description": "Gross weight"
+        },
+        {
+          "name": "net_mass",
+          "description": "Net weight"
+        },
+        {
+          "name": "status_cd",
+          "description": "Lifecycle status"
+        }
+      ],
+      "sample_records": [
+        {
+          "item_ref": "RM-440018",
+          "item_category": "ROH",
+          "family_code": "FAST",
+          "stock_unit": "EA",
+          "gross_mass": 0.42,
+          "net_mass": 0.39,
+          "status_cd": "ACTIVE"
+        },
+        {
+          "item_ref": "FG-110203",
+          "item_category": "FERT",
+          "family_code": "PUMP",
+          "stock_unit": "EA",
+          "gross_mass": 8.6,
+          "net_mass": 7.9,
+          "status_cd": "ACTIVE"
+        },
+        {
+          "item_ref": "PK-009911",
+          "item_category": "VERP",
+          "family_code": "PACK",
+          "stock_unit": "BOX",
+          "gross_mass": 1.2,
+          "net_mass": 1.1,
+          "status_cd": "BLOCKED"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_006",
+      "description": "Localized product labels maintained by language.",
+      "columns": [
+        {
+          "name": "item_ref",
+          "description": "Product code"
+        },
+        {
+          "name": "locale",
+          "description": "Language key"
+        },
+        {
+          "name": "short_label",
+          "description": "Short product description"
+        }
+      ],
+      "sample_records": [
+        {
+          "item_ref": "RM-440018",
+          "locale": "EN",
+          "short_label": "Hex Bolt M8 Zinc"
+        },
+        {
+          "item_ref": "RM-440018",
+          "locale": "DE",
+          "short_label": "Sechskantschraube M8 verzinkt"
+        },
+        {
+          "item_ref": "FG-110203",
+          "locale": "EN",
+          "short_label": "Centrifugal Pump 2HP"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_007",
+      "description": "Accounting document header information.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "description": "Company code"
+        },
+        {
+          "name": "journal_no",
+          "description": "Accounting document number"
+        },
+        {
+          "name": "fiscal_period_year",
+          "description": "Fiscal year"
+        },
+        {
+          "name": "journal_type",
+          "description": "Document type"
+        },
+        {
+          "name": "entered_on",
+          "description": "Document entry date"
+        },
+        {
+          "name": "posting_on",
+          "description": "Posting date"
+        },
+        {
+          "name": "doc_ccy",
+          "description": "Document currency"
+        }
+      ],
+      "sample_records": [
+        {
+          "entity_id": "IN01",
+          "journal_no": "1900045821",
+          "fiscal_period_year": "2025",
+          "journal_type": "KR",
+          "entered_on": "2025-03-04",
+          "posting_on": "2025-03-04",
+          "doc_ccy": "INR"
+        },
+        {
+          "entity_id": "IN01",
+          "journal_no": "1900045822",
+          "fiscal_period_year": "2025",
+          "journal_type": "DR",
+          "entered_on": "2025-03-05",
+          "posting_on": "2025-03-06",
+          "doc_ccy": "INR"
+        },
+        {
+          "entity_id": "DE01",
+          "journal_no": "5100000877",
+          "fiscal_period_year": "2025",
+          "journal_type": "SA",
+          "entered_on": "2025-03-07",
+          "posting_on": "2025-03-07",
+          "doc_ccy": "EUR"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_008",
+      "description": "Individual debit and credit postings belonging to accounting documents.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "description": "Company code"
+        },
+        {
+          "name": "journal_no",
+          "description": "Accounting document number"
+        },
+        {
+          "name": "fiscal_period_year",
+          "description": "Fiscal year"
+        },
+        {
+          "name": "entry_seq",
+          "description": "Line sequence"
+        },
+        {
+          "name": "posting_key",
+          "description": "Posting key"
+        },
+        {
+          "name": "gl_account",
+          "description": "General ledger account"
+        },
+        {
+          "name": "debit_credit",
+          "description": "Debit or credit indicator"
+        },
+        {
+          "name": "amount_local",
+          "description": "Amount in local currency"
+        },
+        {
+          "name": "amount_doc",
+          "description": "Amount in document currency"
+        },
+        {
+          "name": "customer_ref",
+          "description": "Customer reference, when applicable"
+        },
+        {
+          "name": "supplier_ref",
+          "description": "Supplier reference, when applicable"
+        }
+      ],
+      "sample_records": [
+        {
+          "entity_id": "IN01",
+          "journal_no": "1900045821",
+          "fiscal_period_year": "2025",
+          "entry_seq": "001",
+          "posting_key": "31",
+          "gl_account": "211000",
+          "debit_credit": "C",
+          "amount_local": 125000.0,
+          "amount_doc": 125000.0,
+          "supplier_ref": "V-00881"
+        },
+        {
+          "entity_id": "IN01",
+          "journal_no": "1900045821",
+          "fiscal_period_year": "2025",
+          "entry_seq": "002",
+          "posting_key": "40",
+          "gl_account": "510200",
+          "debit_credit": "D",
+          "amount_local": 125000.0,
+          "amount_doc": 125000.0
+        },
+        {
+          "entity_id": "IN01",
+          "journal_no": "1900045822",
+          "fiscal_period_year": "2025",
+          "entry_seq": "001",
+          "posting_key": "01",
+          "gl_account": "120000",
+          "debit_credit": "D",
+          "amount_local": 59000.0,
+          "amount_doc": 59000.0,
+          "customer_ref": "C-100284"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_009",
+      "description": "Procurement document summary. One record per purchasing document.",
+      "columns": [
+        {
+          "name": "proc_doc_id",
+          "description": "Purchasing document reference"
+        },
+        {
+          "name": "doc_category",
+          "description": "Document category"
+        },
+        {
+          "name": "proc_type",
+          "description": "Purchasing document type"
+        },
+        {
+          "name": "legal_entity",
+          "description": "Company code"
+        },
+        {
+          "name": "supplier_ref",
+          "description": "Supplier account"
+        },
+        {
+          "name": "created_date",
+          "description": "Document date"
+        },
+        {
+          "name": "buyer_team",
+          "description": "Purchasing group"
+        }
+      ],
+      "sample_records": [
+        {
+          "proc_doc_id": "4500017820",
+          "doc_category": "F",
+          "proc_type": "NB",
+          "legal_entity": "IN01",
+          "supplier_ref": "V-00881",
+          "created_date": "2025-03-10",
+          "buyer_team": "P10"
+        },
+        {
+          "proc_doc_id": "4500017821",
+          "doc_category": "F",
+          "proc_type": "NB",
+          "legal_entity": "IN01",
+          "supplier_ref": "V-00977",
+          "created_date": "2025-03-11",
+          "buyer_team": "P12"
+        },
+        {
+          "proc_doc_id": "4500009912",
+          "doc_category": "F",
+          "proc_type": "UB",
+          "legal_entity": "DE01",
+          "supplier_ref": "V-00902",
+          "created_date": "2025-03-12",
+          "buyer_team": "P20"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_010",
+      "description": "Rows/items within each procurement document.",
+      "columns": [
+        {
+          "name": "proc_doc_id",
+          "description": "Purchasing document reference"
+        },
+        {
+          "name": "line_no",
+          "description": "Item number"
+        },
+        {
+          "name": "item_ref",
+          "description": "Product code, if stocked"
+        },
+        {
+          "name": "line_description",
+          "description": "Free-text item description"
+        },
+        {
+          "name": "ordered_qty",
+          "description": "Quantity ordered"
+        },
+        {
+          "name": "order_unit",
+          "description": "Unit of measure"
+        },
+        {
+          "name": "unit_price",
+          "description": "Net price per pricing unit"
+        },
+        {
+          "name": "delivery_site",
+          "description": "Plant or receiving location"
+        }
+      ],
+      "sample_records": [
+        {
+          "proc_doc_id": "4500017820",
+          "line_no": "00010",
+          "item_ref": "RM-440018",
+          "line_description": "Hex Bolt M8 Zinc",
+          "ordered_qty": 5000,
+          "order_unit": "EA",
+          "unit_price": 1.85,
+          "delivery_site": "IN10"
+        },
+        {
+          "proc_doc_id": "4500017820",
+          "line_no": "00020",
+          "item_ref": "PK-009911",
+          "line_description": "Corrugated cartons",
+          "ordered_qty": 300,
+          "order_unit": "BOX",
+          "unit_price": 42.0,
+          "delivery_site": "IN10"
+        },
+        {
+          "proc_doc_id": "4500017821",
+          "line_no": "00010",
+          "item_ref": "FG-110203",
+          "line_description": "Centrifugal Pump 2HP",
+          "ordered_qty": 12,
+          "order_unit": "EA",
+          "unit_price": 18500.0,
+          "delivery_site": "IN20"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_011",
+      "description": "Customer order header extract from the order management module.",
+      "columns": [
+        {
+          "name": "order_ref",
+          "description": "Sales document number"
+        },
+        {
+          "name": "order_kind",
+          "description": "Sales document type"
+        },
+        {
+          "name": "sales_unit",
+          "description": "Sales organization"
+        },
+        {
+          "name": "channel_id",
+          "description": "Distribution channel"
+        },
+        {
+          "name": "division_id",
+          "description": "Division"
+        },
+        {
+          "name": "sold_to_ref",
+          "description": "Ordering customer"
+        },
+        {
+          "name": "document_currency",
+          "description": "Currency"
+        }
+      ],
+      "sample_records": [
+        {
+          "order_ref": "7000451201",
+          "order_kind": "OR",
+          "sales_unit": "IN10",
+          "channel_id": "10",
+          "division_id": "00",
+          "sold_to_ref": "C-100284",
+          "document_currency": "INR"
+        },
+        {
+          "order_ref": "7000451202",
+          "order_kind": "OR",
+          "sales_unit": "IN10",
+          "channel_id": "20",
+          "division_id": "01",
+          "sold_to_ref": "C-100317",
+          "document_currency": "INR"
+        },
+        {
+          "order_ref": "7000451203",
+          "order_kind": "RE",
+          "sales_unit": "EU20",
+          "channel_id": "10",
+          "division_id": "00",
+          "sold_to_ref": "C-200044",
+          "document_currency": "EUR"
+        }
+      ]
+    },
+    {
+      "table_id": "SRC_012",
+      "description": "Product and quantity details for each customer order.",
+      "columns": [
+        {
+          "name": "order_ref",
+          "description": "Sales document number"
+        },
+        {
+          "name": "line_seq",
+          "description": "Item sequence number"
+        },
+        {
+          "name": "product_code",
+          "description": "Material/product identifier"
+        },
+        {
+          "name": "customer_item_text",
+          "description": "Description shown on order"
+        },
+        {
+          "name": "requested_qty",
+          "description": "Order quantity"
+        },
+        {
+          "name": "sales_uom",
+          "description": "Sales unit"
+        },
+        {
+          "name": "net_line_value",
+          "description": "Net item value"
+        }
+      ],
+      "sample_records": [
+        {
+          "order_ref": "7000451201",
+          "line_seq": "000010",
+          "product_code": "RM-440018",
+          "customer_item_text": "Hex Bolt M8 Zinc",
+          "requested_qty": 1000,
+          "sales_uom": "EA",
+          "net_line_value": 1850.0
+        },
+        {
+          "order_ref": "7000451201",
+          "line_seq": "000020",
+          "product_code": "FG-110203",
+          "customer_item_text": "Centrifugal Pump 2HP",
+          "requested_qty": 2,
+          "sales_uom": "EA",
+          "net_line_value": 37000.0
+        },
+        {
+          "order_ref": "7000451202",
+          "line_seq": "000010",
+          "product_code": "PK-009911",
+          "customer_item_text": "Carton - Large",
+          "requested_qty": 50,
+          "sales_uom": "BOX",
+          "net_line_value": 2100.0
+        }
+      ]
+    }
+  ]
+}
