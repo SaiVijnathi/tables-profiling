@@ -71,7 +71,7 @@ print("\nSending request to Gemini...")
 start_time = time.perf_counter()
 
 response = client.chat.completions.create(
-    model="gemini-3.6-flash",
+    model="gemini-2.5-flash",
     messages=[
         {
             "role": "user",
